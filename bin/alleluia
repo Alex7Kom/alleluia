@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+global.env = {
+  config: "alleluia.json"
+};
+
+try {
+  require('../lib');
+} catch(e) {
+  console.error(e);
+  process.exit(1);
+}
