@@ -1,11 +1,19 @@
 {
-  "name": "Alleluia",
+  "name": "alleluia",
   "version": "0.0.1",
   "description": "Static blog generator",
-  "author": "Alexey Komarov",
+  "author": "Alexey Komarov <alex7kom@gmail.com>",
   "license": "MIT",
   "bin": {
     "alleluia": "./bin/alleluia"
+  },
+  "keywords": [
+    "blog",
+    "generator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alex7Kom/alleluia.git"
   },
   "dependencies": {
     "marked": "~0.3.1",

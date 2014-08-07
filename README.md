@@ -9,7 +9,7 @@ While Alleluia uses an async-like workflow most of the I/O is synchronious. Sync
 
 The easiest way to install Alleluia is using `npm`:
 
-    npm install -g git://github.com/Alex7Kom/alleluia.git
+    npm install -g alleluia
 
 You need to have [Node.js](http://nodejs.org) installed beforehand.
 
