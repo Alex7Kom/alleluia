@@ -36,7 +36,7 @@ try {
       });
     });
   } else {
-    require('../lib')(config);
+    require('../lib/main')(config);
   }
 } catch(e) {
   console.error(e);
