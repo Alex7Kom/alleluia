@@ -1,10 +1,6 @@
 #!/usr/bin/env node
 
-global.env = {
-  config: "alleluia.json"
-};
-
-var config = require('../lib/config');
+var config = require('../lib/config')('alleluia.json');
 
 try {
   if (process.argv[2] == 'watch') {
