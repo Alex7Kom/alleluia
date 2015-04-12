@@ -1,9 +1,10 @@
 # Alleluia
 
-Alleluia is a static site generator. It is intended to be fast, simple, extensible, and moddable.
-Alleluia uses the concept of pipelines where input data goes through a series of functions (pipes) with standardized inputs and outputs that transforms the data.
-Alleluia comes with basic set of pipes but you can write and use your own pipes that fit your needs better.
-While Alleluia uses an async-like workflow most of the I/O is synchronious. Sync I/O is much faster when we need to read/write many files in a row while async structure of Alleluia allows to use any async functions.
+Alleluia is a static site generator that I use for my own sites.
+
+It is intended to be fast, simple, extensible, and moddable.
+Alleluia uses a concept of pipelines where input data goes through a series of functions (pipes) with standardized inputs and outputs which transform the data.
+Alleluia comes with a basic set of pipes but you can write and use your own pipes that fit your needs better.
 
 ## Installation
 
@@ -28,7 +29,7 @@ There are several types of pipes, such as `pipe`, `filter`, `data`, and `tee`.
 
 The `data` pipe is used to load saved results of pipelines, while `tee` is a concept similar to map-reduce.
 Alleluia passes to a generic `pipe` data, pipe settings, alleluia config, set of filters and a callback function, to which the pipe should pass the results of its work.
-`filter` is a simple function that accepts a string, transforms it and outputs the resulting string. Alleluia runs a given filter against given property of each object in pipeline's data set. Also stock `renderTemplate` pipe binds all loaded filters to swig template engine so the filters can be used in templates.
+`filter` is a simple function that accepts a string, transforms it and outputs the resulting string. Alleluia runs a given filter against given property of each object in pipeline's data set. Also stock `renderTemplate` pipe binds all loaded filters to Swig template engine so the filters can be used in templates.
 
 A basic pipeline looks like this:
 
@@ -42,6 +43,12 @@ A basic pipeline looks like this:
 ```
 
 This pipeline uses `loadPosts` pipe to load posts and does nothing more. Actually it does one more thing: caches the loaded data so it can be used later.
+
+A pipe can accept params:
+
+```
+{ "pipe": "sort", "by": "date", "order": "asc" }
+```
 
 TODO: more on pipelines
 
