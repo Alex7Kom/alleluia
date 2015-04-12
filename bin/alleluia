@@ -8,33 +8,7 @@ var config = require('../lib/config');
 
 try {
   if (process.argv[2] == 'watch') {
-    var gaze = require('gaze');
-    var exec = require('child_process').exec;
-
-    var dirs = ['**/*'];
-    if (!config.absolute) {
-      dirs.push('!**/' + config.destination + '/**');
-    }
-
-    gaze(dirs, function(err, watcher) {
-      console.log('Watching...');
-      var working = false;
-      this.on('changed', function(filepath) {
-        if (working) {
-          return;
-        }
-        console.log(filepath + ' was changed.');
-        console.log('Working...');
-        working = true;
-        exec('alleluia', function (error, stdout, stderr) {
-          if (error) {
-            throw error;
-          }
-          console.log('Done. Continue watching...');
-          working = false;
-        });
-      });
-    });
+    require('../lib/watch')(config);
   } else {
     require('../lib/main')(config);
   }
