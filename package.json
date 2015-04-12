@@ -16,6 +16,7 @@
     "url": "https://github.com/Alex7Kom/alleluia.git"
   },
   "dependencies": {
+    "extend": "^2.0.0",
     "marked": "~0.3.1",
     "swig": "~1.3.2",
     "wrench": "~1.5.7",
