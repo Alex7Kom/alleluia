@@ -6,8 +6,10 @@ global.env = {
   config: "alleluia.json"
 };
 
+var config = require('../lib/config');
+
 try {
-  run();
+  run(config);
 } catch(e) {
   console.error(e);
   process.exit(1);
