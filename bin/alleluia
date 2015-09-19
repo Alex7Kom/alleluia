@@ -3,7 +3,7 @@
 var config = require('../lib/config')('alleluia.json');
 
 try {
-  if (process.argv[2] == 'watch') {
+  if (process.argv[2] === 'watch') {
     require('../lib/watch')(config);
   } else {
     require('../lib/main')(config);
