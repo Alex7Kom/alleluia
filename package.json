@@ -1,6 +1,6 @@
 {
   "name": "alleluia",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Static blog generator",
   "author": "Alexey Komarov <alex7kom@gmail.com>",
   "license": "MIT",
